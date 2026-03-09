@@ -1,10 +1,10 @@
 import React from "react";
-import quizForm from "../../components/quizForm";
-
-
+import QuizForm from "../../components/quizForm";
 
 function QuizPage() {
     return (
-        <quizForm />
+        <QuizForm />
     )
 }
+
+export default QuizPage;
