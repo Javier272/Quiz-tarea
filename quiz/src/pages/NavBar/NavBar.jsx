@@ -7,6 +7,7 @@ function Navbar() {
       <div className="nav-container">
         <NavLink to="/" className="nav-link">Inicio </NavLink>
         <NavLink to="/quiz" className="nav-link"> Formulario</NavLink>
+        <NavLink to="/result" className="nav-link"> Resultado</NavLink>
       </div>
       <div>
         
