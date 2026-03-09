@@ -17,8 +17,9 @@ function QuizForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Respuestas:', answers);
-        // Aquí puedes agregar lógica para calcular el Pokémon basado en las respuestas
+        if (onSubmit) {
+            onSubmit(answers); 
+        }
     };
 
     return (
