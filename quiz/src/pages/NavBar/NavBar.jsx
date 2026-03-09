@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <NavLink to="/" className="nav-link">Inicio</NavLink>
-        <NavLink to="/form" className="nav-link">Formulario</NavLink>
+        <NavLink to="/formulario" className="nav-link">Formulario</NavLink>
       </div>
       <div>
         
