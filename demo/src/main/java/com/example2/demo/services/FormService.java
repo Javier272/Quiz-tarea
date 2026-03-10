@@ -3,7 +3,7 @@ import org.springframework.stereotype.Service;
 import com.example2.demo.dto.PokemonResponse;
 import com.example2.demo.dto.QuizRequest;
 
-@Service
+@Service // el frontend envía las respuestas y Spring Boot se encarga de procesarlas 
 public class FormService {
 
     public PokemonResponse pokemon(QuizRequest respuestas){
@@ -16,17 +16,17 @@ public class FormService {
 
 
         if (sumaPuntos <= 7){
-            nombrePokemon = "HOLA1";
-            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
+            nombrePokemon = "Eevee";
+            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/133.png";
         } else if (sumaPuntos <= 11){
-            nombrePokemon = "HOLA2";
-            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
+            nombrePokemon = "Mew";
+            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/151.png";
         }else if (sumaPuntos <= 13){
-            nombrePokemon = "HOLA3";
+            nombrePokemon = "Pikachu";
             imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
         }else {
-            nombrePokemon = "HOLA4";
-            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
+            nombrePokemon = "Bulbasur";
+            imagenPokemon = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/001.png";
         }
 
         return new PokemonResponse(nombrePokemon, imagenPokemon);

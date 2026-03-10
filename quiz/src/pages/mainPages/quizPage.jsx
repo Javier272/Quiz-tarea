@@ -28,7 +28,7 @@ const QuizPage = () => {
             
             {/* Si recibimos datos del backend, mostramos la imagen y el nombre */}
             {pokemonData && (
-                <div style={{marginTop: '20px', padding: '20px', backgroundColor: '#f0f0f0', borderRadius: '10px'}}>
+                <div style={{marginTop: '20px', padding: '20px', backgroundColor: '#f0f0f0', borderRadius: '10px', color: 'black'}}>
                     <h2>¡Eres {pokemonData.nombre}!</h2>
                     <img src={pokemonData.imagen} alt={pokemonData.nombre} style={{ width: '150px' }} />
                 </div>
