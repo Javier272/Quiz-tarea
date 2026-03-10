@@ -1,35 +1,34 @@
 import React, { useState } from "react";
 
-function QuizForm() {
+function QuizForm({ onSubmit }) {
     // Definimos el estado 'answers' como un objeto para guardar todas las respuestas en un solo lugar
     const [answers, setAnswers] = useState({
         pregunta1: '',
         pregunta2: '',
-        pregunta3: ''
+        pregunta3: '',
+        pregunta4: '',
+        pregunta5: ''
     });
 
     // Esta función se activa cada vez que el usuario cambia una opción en cualquier <select>
     const handleChange = (e) => {
-        // Extraemos el 'name' (qué pregunta es) y el 'value' (qué opción eligió) del elemento
         const { name, value } = e.target;
-
-        // Actualizamos el estado manteniendo lo que ya había (...answers) 
-        // y cambiando solo la pregunta que se acaba de responder [name]: value
         setAnswers({
             ...answers,
-            [name]: value
+            [name]: parseInt(value, 10) // Convertimos el valor a número entero
         });
     };
 
     // Esta función se activa al hacer clic en el botón "Enviar"
     const handleSubmit = (e) => {
-        // Evitamos que la página se recargue (comportamiento por defecto de los formularios)
+        // Evitamos que la página se recargue al enviar el formulario
         e.preventDefault();
         
-        // Mostramos en la consola el objeto final con todas las respuestas
         console.log('Respuestas:', answers);
         
-        // Espacio para lógica futura: por ejemplo, decidir qué Pokémon eres según los valores
+        if (onSubmit) {
+            onSubmit(answers); // Enviamos el objeto completo de respuestas al componente padre
+        }
     };
 
     return (
@@ -78,6 +77,32 @@ function QuizForm() {
             </label>
             <br />
             <br />
+            <label>
+                ¿Cuál es tu poder favorito?
+                <br />
+                <select name="pregunta4" value={answers.pregunta4} onChange={handleChange}>
+                    <option value="">Selecciona una opción</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+            <br />
+            <br />
+            <label>
+                ¿Cuál es tu poder favorito?
+                <br />
+                <select name="pregunta5" value={answers.pregunta5} onChange={handleChange}>
+                    <option value="">Selecciona una opción</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
 
             <button type="submit">Enviar</button>
         </form>

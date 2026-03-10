@@ -41,5 +41,5 @@ export async function enviarRespuestas(respuestas) {
      * espera a que el backend envie la respues
      * ---------------------------------------------------------
      */
-    return await response.text(); 
+    return await response.json(); 
 }
