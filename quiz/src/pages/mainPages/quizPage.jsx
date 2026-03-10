@@ -35,7 +35,7 @@ const QuizPage = () => {
             )}
 
             {/* Si hubo un error, lo mostramos */}
-            {errorMensaje && <div style={{color: 'red', marginTop: '20px'}}>{errorMensaje}</div>}
+            {error && <div style={{color: 'red', marginTop: '20px'}}>{error}</div>}
         </div>
     );
 };
