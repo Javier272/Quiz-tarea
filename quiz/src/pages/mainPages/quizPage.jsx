@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import QuizForm from '../../components/QuizForm';
-// Importamos la función con la estructura nueva
 import { enviarRespuestas } from '../../services/quizService'; 
 
 const QuizPage = () => {
@@ -8,7 +7,7 @@ const QuizPage = () => {
 
     const handleFormSubmit = async (respuestasUsuario) => {
         try {
-            // Llamamos a la función que creamos arriba
+            // Llamamos a la función que envía las respuestas al backend y esperamos su respuesta
             const respuestaBackend = await enviarRespuestas(respuestasUsuario);
             
             // Mostramos lo que respondió el backend
